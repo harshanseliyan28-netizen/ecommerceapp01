@@ -22,17 +22,70 @@
             <span class="brand-tagline">Curated essentials. Smooth checkout.</span>
           </div>
         </div>
-        <nav class="main-nav">
-          <button class="nav-pill is-active" data-filter="all">All</button>
-          <button class="nav-pill" data-filter="electronics">Electronics</button>
-          <button class="nav-pill" data-filter="fashion">Fashion</button>
-          <button class="nav-pill" data-filter="home">Home & Living</button>
-          <button class="nav-pill" data-filter="grocery">Grocery</button>
-        </nav>
+        <div class="header-right">
+          <nav class="main-nav">
+            <button class="nav-pill is-active" data-filter="all">All</button>
+            <button class="nav-pill" data-filter="electronics">Electronics</button>
+            <button class="nav-pill" data-filter="fashion">Fashion</button>
+            <button class="nav-pill" data-filter="home">Home & Living</button>
+            <button class="nav-pill" data-filter="grocery">Grocery</button>
+          </nav>
+          <div class="auth-inline">
+            <span id="auth-status" class="auth-status"
+              >Sign in to start shopping securely.</span
+            >
+            <button id="logout-btn" class="ghost-btn" style="display: none">Logout</button>
+          </div>
+        </div>
       </header>
 
       <main class="app-main">
-        <section id="shop" class="section is-visible">
+        <!-- Login page -->
+        <section id="login-section" class="section is-visible">
+          <div class="section-header">
+            <h1>Welcome back to NovaStore</h1>
+            <p>Sign in to save your cart, track orders and shop faster.</p>
+          </div>
+
+          <div class="layout login-layout">
+            <section class="card login-hero">
+              <h2>Curated products. Smooth checkout.</h2>
+              <p>
+                Discover hand‑picked electronics, fashion and home essentials with stunning
+                visuals and a delightful shopping experience.
+              </p>
+              <ul class="login-highlights">
+                <li>Beautiful product gallery with rich detail view</li>
+                <li>Smart cart with quantity controls and live totals</li>
+                <li>Responsive layout that looks great everywhere</li>
+              </ul>
+            </section>
+
+            <section class="card login-card">
+              <h2>Sign in</h2>
+              <p class="login-subtitle">Use any email and password for this demo store.</p>
+              <form id="login-form" class="form">
+                <div class="field-grid">
+                  <label class="field field-full">
+                    <span>Email</span>
+                    <input type="email" placeholder="you@example.com" required />
+                  </label>
+                  <label class="field field-full">
+                    <span>Password</span>
+                    <input type="password" placeholder="••••••••" required />
+                  </label>
+                </div>
+                <button type="submit" class="primary-btn">Continue to shop</button>
+                <p class="login-note">
+                  This login is client‑side only and meant to showcase the UI.
+                </p>
+              </form>
+            </section>
+          </div>
+        </section>
+
+        <!-- Shop page -->
+        <section id="shop" class="section">
           <div class="section-header">
             <h1>Discover products you’ll love</h1>
             <p>Handpicked electronics, fashion and home essentials with fast delivery.</p>
@@ -43,7 +96,7 @@
               <header class="products-header">
                 <div class="products-header-main">
                   <h2>Featured collection</h2>
-                  <p>Tap a product to add it to your cart.</p>
+                  <p>Tap a product card for details or add it directly to your cart.</p>
                 </div>
                 <div class="products-header-actions">
                   <label class="field search-field">
@@ -82,7 +135,9 @@
                   <span>Total</span>
                   <span id="cart-total">₹0.00</span>
                 </div>
-                <button id="checkout-btn" class="primary-btn" disabled>Checkout securely</button>
+                <button id="checkout-btn" class="primary-btn" disabled>
+                  Checkout securely
+                </button>
               </footer>
             </aside>
           </div>
