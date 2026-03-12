@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaStore - Modern E‑commerce</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-mark">N</div>
+          <div class="brand-text">
+            <span class="brand-name">NovaStore</span>
+            <span class="brand-tagline">Curated essentials. Smooth checkout.</span>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <button class="nav-pill is-active" data-filter="all">All</button>
+          <button class="nav-pill" data-filter="electronics">Electronics</button>
+          <button class="nav-pill" data-filter="fashion">Fashion</button>
+          <button class="nav-pill" data-filter="home">Home & Living</button>
+          <button class="nav-pill" data-filter="grocery">Grocery</button>
+        </nav>
+      </header>
+
+      <main class="app-main">
+        <section id="shop" class="section is-visible">
+          <div class="section-header">
+            <h1>Discover products you’ll love</h1>
+            <p>Handpicked electronics, fashion and home essentials with fast delivery.</p>
+          </div>
+
+          <div class="layout layout-shop">
+            <section class="card products">
+              <header class="products-header">
+                <div class="products-header-main">
+                  <h2>Featured collection</h2>
+                  <p>Tap a product to add it to your cart.</p>
+                </div>
+                <div class="products-header-actions">
+                  <label class="field search-field">
+                    <span>Quick search</span>
+                    <input
+                      type="search"
+                      id="search-input"
+                      placeholder="Search by name, category or tag..."
+                      autocomplete="off"
+                    />
+                  </label>
+                </div>
+              </header>
+
+              <div id="product-grid" class="product-grid" aria-live="polite"></div>
+            </section>
+
+            <aside class="card cart-panel" aria-label="Shopping cart">
+              <header class="cart-header">
+                <div>
+                  <h2>Your cart</h2>
+                  <p class="cart-subtitle">Secure checkout powered by NovaStore UI</p>
+                </div>
+                <span id="cart-count" class="cart-count">0 items</span>
+              </header>
+
+              <div id="cart-items" class="cart-items cart-items-empty">
+                <div class="cart-empty-state">
+                  <p>Your cart is empty.</p>
+                  <span>Add a couple of products to see them here.</span>
+                </div>
+              </div>
+
+              <footer class="cart-footer">
+                <div class="cart-total">
+                  <span>Total</span>
+                  <span id="cart-total">₹0.00</span>
+                </div>
+                <button id="checkout-btn" class="primary-btn" disabled>Checkout securely</button>
+              </footer>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <span>© <span id="year"></span> NovaStore. All rights reserved.</span>
+      </footer>
+    </div>
+
+    <!-- Product detail overlay -->
+    <div id="product-detail-backdrop" class="detail-backdrop" aria-hidden="true">
+      <div class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+        <button id="detail-close" class="detail-close" aria-label="Close product details">
+          ×
+        </button>
+        <div class="detail-media">
+          <span id="detail-category-pill" class="detail-media-pill"></span>
+          <img id="detail-image" src="" alt="" />
+        </div>
+        <div class="detail-body">
+          <div class="detail-header-row">
+            <div>
+              <h2 id="detail-title" class="detail-title"></h2>
+              <p id="detail-meta" class="detail-meta"></p>
+            </div>
+            <div class="detail-price" id="detail-price"></div>
+          </div>
+          <div class="detail-tags">
+            <span id="detail-tag" class="detail-tag-pill"></span>
+            <span id="detail-badge" class="detail-tag-pill"></span>
+          </div>
+          <div class="detail-actions">
+            <button id="detail-add-btn" class="primary-btn">
+              Add to cart
+            </button>
+            <button id="detail-back-catalog" class="detail-secondary">
+              Back to catalog
+            </button>
+          </div>
+          <p class="detail-subcopy">
+            This is a demo product detail view. In a real store, you could show reviews,
+            delivery estimates and more specifications here.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
