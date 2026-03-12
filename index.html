@@ -3,7 +3,312 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NovaStore - Modern E-commerce</title>
+    <title>NovaStore – Modern E‑Commerce Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-mark">N</div>
+          <div class="brand-text">
+            <span class="brand-name">NovaStore</span>
+            <span class="brand-tagline">Premium gadgets & lifestyle picks</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <button class="nav-pill is-active" data-section-target="home-section">
+            Home
+          </button>
+          <button class="nav-pill" data-section-target="shop-section">
+            Shop
+          </button>
+          <button class="nav-pill" data-section-target="about-section">
+            About
+          </button>
+          <button class="nav-pill" data-section-target="login-section">
+            Login
+          </button>
+        </nav>
+
+        <div class="header-right">
+          <div class="auth-inline">
+            <span class="auth-status" id="authStatus">Not signed in</span>
+            <button class="ghost-btn" id="authToggleBtn">Sign in</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <!-- Home / Hero -->
+        <section id="home-section" class="section is-visible">
+          <div class="section-header">
+            <h1>Welcome to NovaStore</h1>
+            <p>
+              Curated tech, audio and lifestyle gear – fast checkout, beautiful UI.
+            </p>
+          </div>
+
+          <div class="layout">
+            <article class="card">
+              <div class="login-hero">
+                <h2>Discover your next daily essential</h2>
+                <p>
+                  Hand‑picked products with rich details, instant cart feedback and a
+                  smooth login experience – all in a single, modern page.
+                </p>
+                <ul class="login-highlights">
+                  <li>Responsive layout that looks great on desktop and mobile</li>
+                  <li>Interactive product details overlay with large imagery</li>
+                  <li>Cart panel with quantity controls and live totals</li>
+                  <li>Simple demo login that updates the UI state</li>
+                </ul>
+              </div>
+            </article>
+
+            <aside class="card tips">
+              <h3>How to explore this demo</h3>
+              <ul>
+                <li>Open the <strong>Shop</strong> tab to browse all products.</li>
+                <li>Click a product card to view full details and specs.</li>
+                <li>Use the cart on the right to adjust quantities.</li>
+                <li>
+                  Go to the <strong>Login</strong> tab and sign in with
+                  <code>demo@novastore.com</code> / <code>password123</code>.
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <!-- Shop / Products -->
+        <section id="shop-section" class="section">
+          <div class="section-header">
+            <h1>Shop featured products</h1>
+            <p>Explore a modern catalog with images, tags and quick add to cart.</p>
+          </div>
+
+          <div class="layout layout-shop">
+            <section class="card products">
+              <header class="products-header">
+                <div class="products-header-main">
+                  <h2>Browse catalog</h2>
+                  <p>Search and filter through a curated set of products.</p>
+                </div>
+
+                <div class="products-header-actions">
+                  <div class="field search-field">
+                    <span>Search products</span>
+                    <input
+                      id="searchInput"
+                      type="text"
+                      placeholder="Search by name, category, tag…"
+                    />
+                  </div>
+                </div>
+              </header>
+
+              <div id="productGrid" class="product-grid">
+                <!-- Product cards injected by script.js -->
+              </div>
+
+              <div id="productsEmpty" class="products-empty is-hidden">
+                <p>No products match your search.</p>
+                <span>Try a different keyword or clear the search field.</span>
+              </div>
+            </section>
+
+            <aside class="card cart-panel">
+              <header class="cart-header">
+                <div>
+                  <h2>Your cart</h2>
+                  <p class="cart-subtitle">Items update instantly as you shop.</p>
+                </div>
+                <span id="cartCount" class="cart-count">0 items</span>
+              </header>
+
+              <div id="cartItems" class="cart-items cart-items-empty">
+                <div class="cart-empty-state">
+                  <p>Your cart is empty</p>
+                  <span>Add something from the shop to get started.</span>
+                </div>
+              </div>
+
+              <footer class="cart-footer">
+                <div class="cart-total">
+                  <span>Estimated total</span>
+                  <span id="cartTotal">$0.00</span>
+                </div>
+                <button id="checkoutBtn" class="primary-btn" disabled>
+                  Proceed to checkout
+                </button>
+              </footer>
+            </aside>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about-section" class="section">
+          <div class="section-header">
+            <h1>About this project</h1>
+            <p>
+              A single‑page, front‑end only e‑commerce experience with a strong focus
+              on UI polish.
+            </p>
+          </div>
+
+          <div class="layout">
+            <article class="card">
+              <h2>What’s included</h2>
+              <ul class="login-highlights">
+                <li>Reusable product model rendered entirely from JavaScript data</li>
+                <li>Interactive detail overlay with dedicated image and specs area</li>
+                <li>Cart state with quantity controls and live subtotal</li>
+                <li>Responsive layout, optimized for both wide and narrow screens</li>
+              </ul>
+            </article>
+
+            <aside class="card">
+              <h2>How you can extend it</h2>
+              <ul class="login-highlights">
+                <li>Connect the login form to a real backend API.</li>
+                <li>Replace demo products with your own data or API response.</li>
+                <li>Add real checkout, orders and profile pages.</li>
+                <li>Integrate payment providers and inventory management.</li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <!-- Login page/section -->
+        <section id="login-section" class="section">
+          <div class="section-header">
+            <h1>Login to your account</h1>
+            <p>
+              Use the demo credentials to see how the UI reacts to authentication.
+            </p>
+          </div>
+
+          <div class="layout login-layout">
+            <article class="card login-hero">
+              <h2>Beautiful login experience</h2>
+              <p>
+                This login page is fully styled to match the rest of the storefront,
+                with subtle gradients, focus states and helpful hints.
+              </p>
+              <ul class="login-highlights">
+                <li>Validation for required fields with inline feedback</li>
+                <li>Demo account that updates the header and button state</li>
+                <li>Toast notifications for success and error states</li>
+                <li>Perfect starting point for real authentication flows</li>
+              </ul>
+            </article>
+
+            <section class="card login-card">
+              <h2>Sign in</h2>
+              <p class="login-subtitle">
+                Use the demo credentials below or plug in your own auth later.
+              </p>
+
+              <form id="loginForm" class="form" autocomplete="on">
+                <div class="field-grid">
+                  <label class="field field-full">
+                    <span>Email</span>
+                    <input
+                      id="loginEmail"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="you@example.com"
+                    />
+                  </label>
+
+                  <label class="field field-full">
+                    <span>Password</span>
+                    <input
+                      id="loginPassword"
+                      name="password"
+                      type="password"
+                      required
+                      minlength="6"
+                      placeholder="••••••••"
+                    />
+                  </label>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                  Sign in
+                </button>
+
+                <p class="login-note">
+                  Demo login:
+                  <code>demo@novastore.com</code> /
+                  <code>password123</code>. In a real project, this would talk to your
+                  backend.
+                </p>
+              </form>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        Built as a front‑end only e‑commerce demo. Feel free to customize it.
+      </footer>
+    </div>
+
+    <!-- Product detail overlay -->
+    <div id="detailBackdrop" class="detail-backdrop">
+      <div class="detail-dialog">
+        <div class="detail-media">
+          <img id="detailImage" src="" alt="" />
+          <div class="detail-media-pill" id="detailCategory"></div>
+        </div>
+        <div class="detail-body">
+          <header class="detail-header-row">
+            <div>
+              <h2 id="detailTitle" class="detail-title"></h2>
+              <p id="detailMeta" class="detail-meta"></p>
+            </div>
+            <span id="detailPrice" class="detail-price"></span>
+          </header>
+          <p id="detailDescription" class="detail-meta"></p>
+          <div id="detailTags" class="detail-tags"></div>
+          <div class="detail-actions">
+            <button id="detailAddBtn" class="primary-btn">
+              Add to cart
+            </button>
+            <button id="detailCloseSecondary" class="detail-secondary">
+              Close
+            </button>
+          </div>
+          <p class="detail-subcopy">
+            This is a demo store – no real orders are placed, but the UI behaves as if
+            they are.
+          </p>
+        </div>
+        <button id="detailCloseBtn" class="detail-close" aria-label="Close details">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast">
+      <span id="toastMessage">Placeholder message</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaStore - Modern E‑commerce</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +317,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <div class="app-shell">
       <header class="app-header">
@@ -23,7 +327,6 @@
             <span class="brand-tagline">Curated essentials. Smooth checkout.</span>
           </div>
         </div>
-
         <div class="header-right">
           <nav class="main-nav">
             <button class="nav-pill is-active" data-filter="all">All</button>
@@ -32,21 +335,17 @@
             <button class="nav-pill" data-filter="home">Home & Living</button>
             <button class="nav-pill" data-filter="grocery">Grocery</button>
           </nav>
-
           <div class="auth-inline">
-            <span id="auth-status" class="auth-status">
-              Sign in to start shopping securely.
-            </span>
-            <button id="logout-btn" class="ghost-btn" style="display:none">
-              Logout
-            </button>
+            <span id="auth-status" class="auth-status"
+              >Sign in to start shopping securely.</span
+            >
+            <button id="logout-btn" class="ghost-btn" style="display: none">Logout</button>
           </div>
         </div>
       </header>
 
       <main class="app-main">
-
-        <!-- LOGIN PAGE -->
+        <!-- Login page -->
         <section id="login-section" class="section is-visible">
           <div class="section-header">
             <h1>Welcome back to NovaStore</h1>
@@ -57,10 +356,9 @@
             <section class="card login-hero">
               <h2>Curated products. Smooth checkout.</h2>
               <p>
-                Discover hand-picked electronics, fashion and home essentials with
-                stunning visuals and a delightful shopping experience.
+                Discover hand‑picked electronics, fashion and home essentials with stunning
+                visuals and a delightful shopping experience.
               </p>
-
               <ul class="login-highlights">
                 <li>Beautiful product gallery with rich detail view</li>
                 <li>Smart cart with quantity controls and live totals</li>
@@ -70,60 +368,41 @@
 
             <section class="card login-card">
               <h2>Sign in</h2>
-              <p class="login-subtitle">
-                Use any email and password for this demo store.
-              </p>
-
+              <p class="login-subtitle">Use any email and password for this demo store.</p>
               <form id="login-form" class="form">
                 <div class="field-grid">
-
                   <label class="field field-full">
                     <span>Email</span>
                     <input type="email" placeholder="you@example.com" required />
                   </label>
-
                   <label class="field field-full">
                     <span>Password</span>
                     <input type="password" placeholder="••••••••" required />
                   </label>
-
                 </div>
-
-                <button type="submit" class="primary-btn">
-                  Continue to shop
-                </button>
-
+                <button type="submit" class="primary-btn">Continue to shop</button>
                 <p class="login-note">
-                  This login is client-side only and meant to showcase the UI.
+                  This login is client‑side only and meant to showcase the UI.
                 </p>
               </form>
             </section>
           </div>
         </section>
 
-        <!-- SHOP PAGE -->
-        <!-- ONLY CHANGE: id="shop" → id="shop-section" -->
-        <section id="shop-section" class="section">
-
+        <!-- Shop page -->
+        <section id="shop" class="section">
           <div class="section-header">
             <h1>Discover products you’ll love</h1>
-            <p>
-              Handpicked electronics, fashion and home essentials with fast delivery.
-            </p>
+            <p>Handpicked electronics, fashion and home essentials with fast delivery.</p>
           </div>
 
           <div class="layout layout-shop">
-
             <section class="card products">
               <header class="products-header">
-
                 <div class="products-header-main">
                   <h2>Featured collection</h2>
-                  <p>
-                    Tap a product card for details or add it directly to your cart.
-                  </p>
+                  <p>Tap a product card for details or add it directly to your cart.</p>
                 </div>
-
                 <div class="products-header-actions">
                   <label class="field search-field">
                     <span>Quick search</span>
@@ -135,21 +414,16 @@
                     />
                   </label>
                 </div>
-
               </header>
 
               <div id="product-grid" class="product-grid" aria-live="polite"></div>
-
             </section>
 
             <aside class="card cart-panel" aria-label="Shopping cart">
-
               <header class="cart-header">
                 <div>
                   <h2>Your cart</h2>
-                  <p class="cart-subtitle">
-                    Secure checkout powered by NovaStore UI
-                  </p>
+                  <p class="cart-subtitle">Secure checkout powered by NovaStore UI</p>
                 </div>
                 <span id="cart-count" class="cart-count">0 items</span>
               </header>
@@ -166,70 +440,60 @@
                   <span>Total</span>
                   <span id="cart-total">₹0.00</span>
                 </div>
-
                 <button id="checkout-btn" class="primary-btn" disabled>
                   Checkout securely
                 </button>
               </footer>
-
             </aside>
-
           </div>
         </section>
       </main>
 
       <footer class="app-footer">
-        <span>
-          © <span id="year"></span> NovaStore. All rights reserved.
-        </span>
+        <span>© <span id="year"></span> NovaStore. All rights reserved.</span>
       </footer>
     </div>
 
-    <!-- PRODUCT DETAIL -->
+    <!-- Product detail overlay -->
     <div id="product-detail-backdrop" class="detail-backdrop" aria-hidden="true">
       <div class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detail-title">
-
-        <button id="detail-close" class="detail-close">×</button>
-
+        <button id="detail-close" class="detail-close" aria-label="Close product details">
+          ×
+        </button>
         <div class="detail-media">
           <span id="detail-category-pill" class="detail-media-pill"></span>
           <img id="detail-image" src="" alt="" />
         </div>
-
         <div class="detail-body">
-
           <div class="detail-header-row">
             <div>
               <h2 id="detail-title" class="detail-title"></h2>
               <p id="detail-meta" class="detail-meta"></p>
             </div>
-
             <div class="detail-price" id="detail-price"></div>
           </div>
-
           <div class="detail-tags">
             <span id="detail-tag" class="detail-tag-pill"></span>
             <span id="detail-badge" class="detail-tag-pill"></span>
           </div>
-
           <div class="detail-actions">
-            <button id="detail-add-btn" class="primary-btn">Add to cart</button>
+            <button id="detail-add-btn" class="primary-btn">
+              Add to cart
+            </button>
             <button id="detail-back-catalog" class="detail-secondary">
               Back to catalog
             </button>
           </div>
-
           <p class="detail-subcopy">
-            This is a demo product detail view. In a real store you could show
-            reviews, delivery estimates and more specifications here.
+            This is a demo product detail view. In a real store, you could show reviews,
+            delivery estimates and more specifications here.
           </p>
-
         </div>
       </div>
     </div>
 
-    <div id="toast" class="toast"></div>
+    <div id="toast" class="toast" aria-live="polite"></div>
 
     <script src="./app.js"></script>
   </body>
-</html>
+  </html>
