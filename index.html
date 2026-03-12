@@ -186,7 +186,8 @@
           <div class="section-header">
             <h1>Login to your account</h1>
             <p>
-              Use the demo credentials to see how the UI reacts to authentication.
+              Use the demo credentials to see how the UI reacts to authentication and
+              checkout.
             </p>
           </div>
 
@@ -211,6 +212,11 @@
                 Use the demo credentials below or plug in your own auth later.
               </p>
 
+              <div class="auth-badge">
+                <span class="auth-badge-dot"></span>
+                Demo environment – safe to explore, no real orders are created.
+              </div>
+
               <form id="loginForm" class="form" autocomplete="on">
                 <div class="field-grid">
                   <label class="field field-full">
@@ -226,15 +232,39 @@
 
                   <label class="field field-full">
                     <span>Password</span>
-                    <input
-                      id="loginPassword"
-                      name="password"
-                      type="password"
-                      required
-                      minlength="6"
-                      placeholder="••••••••"
-                    />
+                    <div class="password-field">
+                      <input
+                        id="loginPassword"
+                        name="password"
+                        type="password"
+                        required
+                        minlength="6"
+                        placeholder="••••••••"
+                      />
+                      <button
+                        type="button"
+                        class="password-toggle"
+                        id="passwordToggle"
+                        aria-label="Show password"
+                      >
+                        Show
+                      </button>
+                    </div>
                   </label>
+                </div>
+
+                <div class="login-options">
+                  <label class="checkbox">
+                    <input id="rememberMe" type="checkbox" />
+                    <span>Remember this device</span>
+                  </label>
+                  <button
+                    type="button"
+                    class="link-btn"
+                    id="forgotPasswordBtn"
+                  >
+                    Forgot password?
+                  </button>
                 </div>
 
                 <button type="submit" class="primary-btn">
@@ -246,6 +276,11 @@
                   <code>demo@novastore.com</code> /
                   <code>password123</code>. In a real project, this would talk to your
                   backend.
+                </p>
+
+                <p class="login-note login-note-small">
+                  Tip: after signing in, the header status updates and checkout behaves
+                  like a real store flow.
                 </p>
               </form>
             </section>
